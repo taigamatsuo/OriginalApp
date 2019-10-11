@@ -1,17 +1,19 @@
 //
-//  ViewController.swift
+//  DateViewController.swift
 //  OriginalApp
 //
-//  Created by 松尾大雅 on 2019/10/04.
+//  Created by 松尾大雅 on 2019/10/11.
 //  Copyright © 2019 litech. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let textArry: NSMutableArray = [
-    "1番めのセル","2番めのセル","3番めのセル"]
+    let DateArray: NSMutableArray = [
+    "1","2","3"]
+    
+    
     @IBOutlet var myTableView: UITableView!
     @IBOutlet var addButton: UIBarButtonItem!
     
@@ -22,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
 
         // Cellの登録.
-        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
+        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
         // DataSourceの設定.
         myTableView.dataSource = self
@@ -49,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("追加")
 
         // textArryに追加.
-       textArry.add("新しいセル")
+       DateArray.add("新しいセル")
 
         // TableViewを再読み込み.
         myTableView.reloadData()
@@ -69,7 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //セル数を指定
       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-              return textArry.count
+              return DateArray.count
           }
        //セル数を指定
 //       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,11 +83,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
            print("セルの値を入れていく")
            let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle,
                                       reuseIdentifier: "aaa\(indexPath.section)-\(indexPath.row)")
-          cell.textLabel?.text = " 名前"
+          cell.textLabel?.text = " 日にち"
            cell.detailTextLabel?.text = "\(indexPath.row + 1)番"
            //cell.detailTextLabel?.numberOfLines = 0
            //cell.detailTextLabel?.text = textArry[indexPath.row]
-           cell.imageView?.image = UIImage(named: "kid_seikaku_kachiki_boy.png")
+           cell.imageView?.image = UIImage(named: "calender_himekuri.png")
            return cell
        }
 
@@ -132,7 +134,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("削除")
 
             // 指定されたセルのオブジェクトをtextArryから削除する.
-            textArry.removeObject(at: indexPath.row)
+            DateArray.removeObject(at: indexPath.row)
 
             // TableViewを再読み込み.
             myTableView.reloadData()
@@ -147,6 +149,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
     }
 }
-
-
-

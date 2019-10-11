@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6610909C2350369A006D7B6B /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610909B2350369A006D7B6B /* DateViewController.swift */; };
+		6610909E235036C4006D7B6B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610909D235036C4006D7B6B /* InfoViewController.swift */; };
+		661090A0235036EB006D7B6B /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610909F235036EB006D7B6B /* DiaryViewController.swift */; };
+		661090A2235039FA006D7B6B /* calender_himekuri.png in Resources */ = {isa = PBXBuildFile; fileRef = 661090A1235039FA006D7B6B /* calender_himekuri.png */; };
 		666144EF23497737003802A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666144EE23497737003802A9 /* AppDelegate.swift */; };
 		666144F123497737003802A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666144F023497737003802A9 /* SceneDelegate.swift */; };
 		666144F323497737003802A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666144F223497737003802A9 /* ViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6610909B2350369A006D7B6B /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		6610909D235036C4006D7B6B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		6610909F235036EB006D7B6B /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		661090A1235039FA006D7B6B /* calender_himekuri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender_himekuri.png; sourceTree = "<group>"; };
 		666144EB23497737003802A9 /* OriginalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OriginalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		666144EE23497737003802A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		666144F023497737003802A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,10 +66,14 @@
 		666144ED23497737003802A9 /* OriginalApp */ = {
 			isa = PBXGroup;
 			children = (
+				661090A1235039FA006D7B6B /* calender_himekuri.png */,
 				66614566234AE6E6003802A9 /* kid_seikaku_kachiki_boy.png */,
 				666144EE23497737003802A9 /* AppDelegate.swift */,
 				666144F023497737003802A9 /* SceneDelegate.swift */,
 				666144F223497737003802A9 /* ViewController.swift */,
+				6610909B2350369A006D7B6B /* DateViewController.swift */,
+				6610909D235036C4006D7B6B /* InfoViewController.swift */,
+				6610909F235036EB006D7B6B /* DiaryViewController.swift */,
 				666144F423497737003802A9 /* Main.storyboard */,
 				666144F723497740003802A9 /* Assets.xcassets */,
 				666144F923497740003802A9 /* LaunchScreen.storyboard */,
@@ -130,6 +142,7 @@
 			files = (
 				666144FB23497740003802A9 /* LaunchScreen.storyboard in Resources */,
 				666144F823497740003802A9 /* Assets.xcassets in Resources */,
+				661090A2235039FA006D7B6B /* calender_himekuri.png in Resources */,
 				66614567234AE6E6003802A9 /* kid_seikaku_kachiki_boy.png in Resources */,
 				666144F623497737003802A9 /* Main.storyboard in Resources */,
 			);
@@ -142,9 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6610909C2350369A006D7B6B /* DateViewController.swift in Sources */,
 				666144F323497737003802A9 /* ViewController.swift in Sources */,
 				666144EF23497737003802A9 /* AppDelegate.swift in Sources */,
 				666144F123497737003802A9 /* SceneDelegate.swift in Sources */,
+				661090A0235036EB006D7B6B /* DiaryViewController.swift in Sources */,
+				6610909E235036C4006D7B6B /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
