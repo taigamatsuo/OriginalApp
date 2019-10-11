@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     let textArry: NSMutableArray = [
     "1番めのセル","2番めのセル","3番めのセル"]
@@ -21,6 +21,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        
+        
         // Cellの登録.
         myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
 
@@ -40,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        // self.view.addSubview(myTableView)
        }
     
-    
+   
     
     /*
      addButtonが押された際呼び出される
@@ -90,35 +94,91 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        }
 
     
-
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            print ("押されました")
+    
+    
+    /*
+        ボタンイベント
+        */
+       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+           // UIAlertControllerを作成する.
+           let myAlert: UIAlertController = UIAlertController(title: "表示したい画面を選択してください", message: "", preferredStyle: .alert)
+
+           // OKのアクションを作成する.
+           let InfoAction = UIAlertAction(title: "個人情報確認画面へ", style: .default) { action in
+               print("Action OK!!")
             switch indexPath.row {
             case 0:
                 // 数学Iのセルタップ時処理
-                // 以下はセグエで数学Iの画面遷移する場合の例
-                self.performSegue(withIdentifier: "toDate", sender: nil)
-            case 1:
-                // 数学Aのセルタップ時
-                 self.performSegue(withIdentifier: "toInfo", sender: nil)
-            case 2:
-                // 数学IIのセルタップ時
-                 self.performSegue(withIdentifier: "toDiary", sender: nil)
-            case 3:
-                // 数学Bのセルタップ時
-                 self.performSegue(withIdentifier: "toDate", sender: nil)
-            case 4:
-                // 数学IIIのセルタップ時
-                self.performSegue(withIdentifier: "toDate", sender: nil)
-            case 5:
-                // 数学Cのセルタップ時
-                self.performSegue(withIdentifier: "toDate", sender: nil)
-    
+                self.performSegue(withIdentifier: "toInfo", sender: nil)
+            
             default:
-                self.performSegue(withIdentifier: "toDate", sender: nil)
+                self.performSegue(withIdentifier: "toInfo", sender: nil)
             }
         }
+        
+           let DiaryAction = UIAlertAction(title: "日報記入画面へ", style: .default) { action in
+                print("Action OK!!")
+            switch indexPath.row {
+                                   case 0:
+                                       // 数学Iのセルタップ時処理
+                                       // 以下はセグエで数学Iの画面遷移する場合の例
+                                       self.performSegue(withIdentifier: "toDate", sender: nil)
+                                   
+                                   default:
+                                       self.performSegue(withIdentifier: "toDate", sender: nil)
+                                   }
+                               }
+                      
+            
+        let CancelAction = UIAlertAction(title: "キャンセル", style: .default) { action in
+            print("Action OK!!")
+        }
+        
+           // OKのActionを追加する.
+           myAlert.addAction(InfoAction)
+           myAlert.addAction(DiaryAction)
+           myAlert.addAction(CancelAction)
+           // UIAlertを発動する.
+           present(myAlert, animated: true, completion: nil)
+       }
+//セルがタップされた時呼び出される
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            print ("押されました")
+//            switch indexPath.row {
+//            case 0:
+//                // 数学Iのセルタップ時処理
+//                // 以下はセグエで数学Iの画面遷移する場合の例
+//                self.performSegue(withIdentifier: "toDate", sender: nil)
+//            case 1:
+//                // 数学Aのセルタップ時
+//                 self.performSegue(withIdentifier: "toInfo", sender: nil)
+//            case 2:
+//                // 数学IIのセルタップ時
+//                 self.performSegue(withIdentifier: "toDiary", sender: nil)
+//            case 3:
+//                // 数学Bのセルタップ時
+//                 self.performSegue(withIdentifier: "toDate", sender: nil)
+//            case 4:
+//                // 数学IIIのセルタップ時
+//                self.performSegue(withIdentifier: "toDate", sender: nil)
+//            case 5:
+//                // 数学Cのセルタップ時
+//                self.performSegue(withIdentifier: "toDate", sender: nil)
+//
+//            default:
+//                self.performSegue(withIdentifier: "toDate", sender: nil)
+//            }
+//        }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
