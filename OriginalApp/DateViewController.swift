@@ -11,9 +11,9 @@ import UIKit
 class DateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let DateArray: NSMutableArray = [
-    "1","2","3"]
+    "","",""]
     
-    
+    var argString = ""
     @IBOutlet var myTableView: UITableView!
     @IBOutlet var addButton: UIBarButtonItem!
     
@@ -23,6 +23,7 @@ class DateViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Cellの登録.
         myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
@@ -38,8 +39,7 @@ class DateViewController: UIViewController, UITableViewDelegate, UITableViewData
         // 編集中のセル選択を許可.
         myTableView.allowsSelectionDuringEditing = true
 
-        // TableViewをViewに追加する.
-       // self.view.addSubview(myTableView)
+       
        }
     
     
@@ -83,50 +83,52 @@ class DateViewController: UIViewController, UITableViewDelegate, UITableViewData
            print("セルの値を入れていく")
            let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle,
                                       reuseIdentifier: "aaa\(indexPath.section)-\(indexPath.row)")
-          cell.textLabel?.text = " 日にち"
-           cell.detailTextLabel?.text = "\(indexPath.row + 1)番"
+           cell.textLabel?.text = argString
+        
+         // cell.textLabel?.text = " 日にち"
+           //cell.detailTextLabel?.text = "\(indexPath.row + 1)番"
            //cell.detailTextLabel?.numberOfLines = 0
            //cell.detailTextLabel?.text = textArry[indexPath.row]
            cell.imageView?.image = UIImage(named: "calender_himekuri.png")
+        
            return cell
        }
 
     
 
-    
+    //セルが押された時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             print ("押されました")
             switch indexPath.row {
             case 0:
                 // 数学Iのセルタップ時処理
                 // 以下はセグエで数学Iの画面遷移する場合の例
-                self.performSegue(withIdentifier: "toDate", sender: nil)
+                self.performSegue(withIdentifier: "toDiary", sender: nil)
             case 1:
                 // 数学Aのセルタップ時
-                 self.performSegue(withIdentifier: "toInfo", sender: nil)
+                 self.performSegue(withIdentifier: "toDiary", sender: nil)
             case 2:
                 // 数学IIのセルタップ時
                  self.performSegue(withIdentifier: "toDiary", sender: nil)
             case 3:
                 // 数学Bのセルタップ時
-                 self.performSegue(withIdentifier: "toDate", sender: nil)
+                 self.performSegue(withIdentifier: "toDiary", sender: nil)
             case 4:
                 // 数学IIIのセルタップ時
-                self.performSegue(withIdentifier: "toDate", sender: nil)
+                self.performSegue(withIdentifier: "toDiary", sender: nil)
             case 5:
                 // 数学Cのセルタップ時
-                self.performSegue(withIdentifier: "toDate", sender: nil)
+                self.performSegue(withIdentifier: "toDiary", sender: nil)
     
             default:
-                self.performSegue(withIdentifier: "toDate", sender: nil)
+                self.performSegue(withIdentifier: "toDiary", sender: nil)
             }
         }
     
     
     
-    /*
-     Cellを挿入または削除しようとした際に呼び出される
-     */
+    
+     //Cellを挿入または削除しようとした際に呼び出される
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         // 削除のとき.
@@ -140,7 +142,6 @@ class DateViewController: UIViewController, UITableViewDelegate, UITableViewData
             myTableView.reloadData()
         }
     }
-
 
     
     

@@ -180,8 +180,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
-    
-    
     /*
      Cellを挿入または削除しようとした際に呼び出される
      */
